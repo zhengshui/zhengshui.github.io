@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shuizheng&#39;s Blog</title>
+  <subtitle>Talk is cheap show me the offer!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/zhengshui/zhengshui.github.io.git/"/>
+  <updated>2017-06-12T03:36:29.000Z</updated>
+  <id>https://github.com/zhengshui/zhengshui.github.io.git/</id>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「3」codewars笔记</title>
+    <link href="https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/3.codewars/"/>
+    <id>https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/3.codewars/</id>
+    <published>2017-06-12T03:30:51.000Z</published>
+    <updated>2017-06-12T03:36:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-一个数组，能开方开方，不能则平方输出"><a href="#1-一个数组，能开方开方，不能则平方输出" class="headerlink" title="1.一个数组，能开方开方，不能则平方输出"></a>1.一个数组，能开方开方，不能则平方输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function squareOrSquareRoot(array) &#123;</div><div class="line">  return array.map(function(val) &#123;</div><div class="line">    var a = Math.sqrt(val);</div><div class="line">    if (Math.floor(a) === a)&#123;</div><div class="line">      return a</div><div class="line">    &#125; else &#123;</div><div class="line">      return Math.pow(val, 2)</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>别人的：（es6, 相对简洁）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function squareOrSquareRoot(array) &#123;</div><div class="line">  return array.map(x =&gt; &#123;</div><div class="line">    const n = Math.sqrt(x)</div><div class="line">    return Number.isInteger(n) ? n : x * x</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-把两个只包含字母的字符串合并，需要去除重复的字母而且按a-z的顺序输出。"><a href="#2-把两个只包含字母的字符串合并，需要去除重复的字母而且按a-z的顺序输出。" class="headerlink" title="2.把两个只包含字母的字符串合并，需要去除重复的字母而且按a-z的顺序输出。"></a>2.把两个只包含字母的字符串合并，需要去除重复的字母而且按a-z的顺序输出。</h3><p>// 时间不合格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function unique(arr) &#123;</div><div class="line">  for (var i = 1; i &lt; arr.length; i++) &#123;</div><div class="line">    if (arr[i] === arr[i-1]) &#123;</div><div class="line">      arr.slice(i--, 1);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return arr;</div><div class="line">&#125;</div><div class="line">function longest(s1, s2) &#123;</div><div class="line">var s3 = s1 + s2;</div><div class="line">  return unique(s3.split(&quot;&quot;).sort()).join(&quot;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>别人：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function longest(s1, s2) &#123;</div><div class="line">  return Array.from(new Set(s1 + s2)).sort().join(&apos;&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>参考：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function longest(s1, s2) &#123;</div><div class="line">  // your code</div><div class="line">  s3 = s1 + s2;</div><div class="line">  s4 = s3.split(&quot;&quot;);</div><div class="line">  s4 = s4.sort().filter(function(element, index, array)&#123;</div><div class="line">    return element !== array[index - 1];</div><div class="line">  &#125;);</div><div class="line">  return s4.join(&quot;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-给一组数组，输出其中元素的最长长度值。"><a href="#3-给一组数组，输出其中元素的最长长度值。" class="headerlink" title="3.给一组数组，输出其中元素的最长长度值。"></a>3.给一组数组，输出其中元素的最长长度值。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function longest(words) &#123;</div><div class="line">for (var i = 1; i &lt; words.length - 1; i++) &#123;</div><div class="line">  if (words[i].length &gt;= words[i-1].length) &#123;</div><div class="line">    words.slice(i-1, 1);</div><div class="line">  &#125; else &#123;</div><div class="line">    words.slice(i, 1);</div><div class="line">  &#125;</div><div class="line">  i--;</div><div class="line">&#125;</div><div class="line">  return words[0].length; //code here</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-给一组数字数组（最少3个元素），找出其中的异数（奇偶）"><a href="#4-给一组数字数组（最少3个元素），找出其中的异数（奇偶）" class="headerlink" title="4.给一组数字数组（最少3个元素），找出其中的异数（奇偶）"></a>4.给一组数字数组（最少3个元素），找出其中的异数（奇偶）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function findOutlier(integers)&#123;</div><div class="line">var a =[],b =[];</div><div class="line">  integers.map(function(val)&#123;</div><div class="line">    val%2 === 0?a.push(val):b.push(val);</div><div class="line">  &#125;);</div><div class="line">  return a.length===1?a[0]:b[0]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-一个数组，能开方开方，不能则平方输出&quot;&gt;&lt;a href=&quot;#1-一个数组，能开方开方，不能则平方输出&quot; class=&quot;headerlink&quot; title=&quot;1.一个数组，能开方开方，不能则平方输出&quot;&gt;&lt;/a&gt;1.一个数组，能开方开方，不能则平方输出&lt;/h3&gt;&lt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://github.com/zhengshui/zhengshui.github.io.git/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/js/"/>
+    
+      <category term="codewars" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/codewars/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「2」移动端的坑</title>
+    <link href="https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/2.mobile-pit/"/>
+    <id>https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/2.mobile-pit/</id>
+    <published>2017-06-12T03:30:24.000Z</published>
+    <updated>2017-06-12T03:39:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-iOS事件委托失效"><a href="#1-iOS事件委托失效" class="headerlink" title="1.iOS事件委托失效"></a>1.iOS事件委托失效</h3><p>在iOS系统中当事件委托对象为body／document元素时可能会出现事件委托失效的情况；</p>
+<p>具体原因为iOS中除了a、button等可点击元素外，其他元素事件不会传递到body／document；</p>
+<p>决解方法：</p>
+<p>1、将对应元素改为a、button等可点击元素</p>
+<p>2、将事件委托到除body／document外的父元素中</p>
+<p>3、给​目标元素加一条样式规则”cursor: pointer”；</p>
+<hr>
+<h3 id="2-fixed（固定位置定位）的问题"><a href="#2-fixed（固定位置定位）的问题" class="headerlink" title="2.  fixed（固定位置定位）的问题"></a>2.  fixed（固定位置定位）的问题</h3><p><a href="https://github.com/maxzhang/maxzhang.github.com/issues/2">https://github.com/maxzhang/maxzhang.github.com/issues/2</a></p>
+<p>总结 :</p>
+<ul>
+<li>在 android 手机下 fixed 表现要比 iOS 更好，软键盘弹出时，不会影响fixed元素定位；</li>
+<li>不要在 fixed 元素中使用 input / textarea 元素,而是一个伪input，点击时弹出一个新层。<br>还是保留之前的态度，依然不推荐在 Android下使用 iScroll。在开发项目时，可以考虑分为两个版本：iOS下使用 iScroll的解决方案，Android下使用 position:fixed。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-iOS事件委托失效&quot;&gt;&lt;a href=&quot;#1-iOS事件委托失效&quot; class=&quot;headerlink&quot; title=&quot;1.iOS事件委托失效&quot;&gt;&lt;/a&gt;1.iOS事件委托失效&lt;/h3&gt;&lt;p&gt;在iOS系统中当事件委托对象为body／document元素时可能会
+    
+    </summary>
+    
+      <category term="前端" scheme="https://github.com/zhengshui/zhengshui.github.io.git/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="ios" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/ios/"/>
+    
+      <category term="移动端" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+      <category term="fixed，css" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/fixed%EF%BC%8Ccss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「1」基于react的技术栈重构（一）</title>
+    <link href="https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/1.react-webapp/"/>
+    <id>https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/1.react-webapp/</id>
+    <published>2017-06-12T03:30:23.000Z</published>
+    <updated>2017-06-12T03:39:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>###参考</p>
+<ol>
+<li><a href="https://github.com/yeoman/generator-webapp">https://github.com/yeoman/generator-webapp</a></li>
+</ol>
+<p>###简介</p>
+<blockquote>
+<ul>
+<li>基于react的技术栈重构dhome-teach</li>
+<li>基础语言： ES6 react sass </li>
+<li>脚手架： yeoman generator-webapp</li>
+<li>构建工具 ： gulp + webpack</li>
+<li>统一数据管理： redux</li>
+<li>路由控制器： react-router react-router-redux</li>
+<li>性能优化： immutable purerender</li>
+<li>前后端分离： webpack-dev-server(proxy)</li>
+<li>代码规范： eslintrc</li>
+<li>单元测试 ： karma</li>
+<li>开发效率提升 : redux-devtools react-hot-loader</li>
+</ul>
+</blockquote>
+<p>###使用的主要库：</p>
+<ul>
+<li>react                                           //view</li>
+<li>redux                                           //数据管理</li>
+<li>react-router react-router-redux                 //路由</li>
+<li>ReactCSStransitionGroup                          //react官方动画库</li>
+<li>axios                                           //取数据</li>
+<li>redux-thunk                                     //redux异步控制</li>
+<li>react-hot-loader                                 //热替换</li>
+<li>create-react-app                                 //react官方脚手架</li>
+<li>lib-flexible                                   //移动端自适应</li>
+<li>sass                                           //css预处理器</li>
+</ul>
+<p>###使用：</p>
+<ol>
+<li>前期准备，代码规范<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i -g gulp</div><div class="line">npm i -g gulp-cli</div><div class="line">npm i -g webpack</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>使用网易NEC规范 <a href="http://nec.netease.com/standard" target="_blank" rel="external">http://nec.netease.com/standard</a></li>
+</ul>
+<ol>
+<li><p>使用脚手架工具快速搭建基础工程</p>
+</li>
+<li><p>开始,开发模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i</div><div class="line">gulp webpack:watch</div></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+</li>
+</ol>
+<ol>
+<li>使用redux-devtools工具 <a href="https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md">https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev redux-devtools</div><div class="line">npm install --save-dev redux-devtools-log-monitor</div><div class="line">npm install --save-dev redux-devtools-dock-monitor</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="主要技术点总结："><a href="#主要技术点总结：" class="headerlink" title="主要技术点总结："></a>主要技术点总结：</h3><h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ol>
+<li>使用normalize.css reset样式<br><a href="https://github.com/necolas/normalize.css">https://github.com/necolas/normalize.css</a></li>
+</ol>
+<h3 id="webpack-配置"><a href="#webpack-配置" class="headerlink" title="webpack 配置"></a>webpack 配置</h3><p>loaders：</p>
+<h3 id="react-学习记录"><a href="#react-学习记录" class="headerlink" title="react 学习记录"></a>react 学习记录</h3><p>1.像设计师一样思考<br>已知“低保真原型和JSON数据结构”；<br>通过对比、重复、亲密性原则进行组件的划分，定义组件并命名；<br>然后划分组件层次（并列、包含）；</p>
+<p>2.构建静态版本<br>利用数据模型渲染一个没有交互的静态版本；<br>可以自上而下或者自下而上的构建静态组件；<br>要求组件只使用render()方法，且只能用props传递数据；</p>
+<p>3.确定最小的可变状态（state）<br>如何确定最小的state？<br>——列出应用所有的数据块；<br>——逐一对以上数据块思考三个问题：<br>①是通过props从父级传递过来么？如果是，则可能不是state。<br>②随时间变化么？如果不变，则可能不是state。<br>//说明可以通过props传递；<br>③能否基于其它state或者props计算出？如果可以，则不是state。</p>
+<p>4.定义getInitialState()所在的组件<br>React 总是在组件层级中单向数据流动的；<br>①找出可以修改或者拥有该state的所有components；<br>②确定一个层级高于①中的所有组件单一组件；<br>③如果找不到该单一组件，则创建该组件；<br>//仅仅为了定义该state；</p>
+<p>以上 to be continued…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###参考&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yeoman/generator-webapp&quot;&gt;https://github.com/yeoman/generator-webapp&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;###简
+    
+    </summary>
+    
+      <category term="前端" scheme="https://github.com/zhengshui/zhengshui.github.io.git/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Redux" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/Redux/"/>
+    
+      <category term="React" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/React/"/>
+    
+      <category term="JavaScript" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「0」Hello World</title>
+    <link href="https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/0.hello-world/"/>
+    <id>https://github.com/zhengshui/zhengshui.github.io.git/2017/06/12/0.hello-world/</id>
+    <published>2017-06-12T03:30:22.000Z</published>
+    <updated>2017-06-12T03:39:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="零、Blog的由来"><a href="#零、Blog的由来" class="headerlink" title="零、Blog的由来"></a>零、Blog的由来</h2><p>作为一个学计算机的，一直想整个自己的 Blog，尤其是最近在搞前端。先是看到 <a href="http://jekyllcn.com/" target="_blank" rel="external">jekyll</a> 感觉不错，折腾了半天感觉还是不够给力。<br>最后还是选择了 <a href="https://hexo.io/" target="_blank" rel="external">hexo3</a>。</p>
+<a id="more"></a>
+<p>主要是这几个优点吧：</p>
+<ul>
+<li>免费╮(╯▽╰)╭</li>
+<li>基于 Node.js</li>
+<li>速度快、操作更简单、命令少，专注于写作本身</li>
+<li>由于 deploy 命令，发布到 github 上生成静态站点也很简单</li>
+</ul>
+<p>所以整个 Blog 就是采用 <a href="https://hexo.io/" target="_blank" rel="external">hexo3</a> + <a href="https://pages.github.com/" target="_blank" rel="external">github pages</a>,主题基于 <a href="https://github.com/yscoder/hexo-theme-indigo">indigo</a> 进行修改，下面就详细说说怎么搭起来吧…</p>
+<h2 id="一、hexo的安装"><a href="#一、hexo的安装" class="headerlink" title="一、hexo的安装"></a>一、hexo的安装</h2><p>首先由于 hexo 是基于 Node.js 开发的，所以我们先要安装 Node.js 环境，进入<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js官网</a>，一般会发现有两个版本：LTS 和 Stable。</p>
+<p>这两个版本的区别在于一个是 LTS 长期支持版（也是推荐选项），另一个是拥有最新功能的稳定版（适合有新功能需求的尝鲜用户）。</p>
+<p>安装完成后，在命令行运行以下命令（其中括号的意思是 install 可以缩写为 i）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i(nstall) -g hexo</div></pre></td></tr></table></figure>
+<p><em>npm 安装方式中 -g 的意思是全局安装。</em></p>
+<h2 id="二、初体验"><a href="#二、初体验" class="headerlink" title="二、初体验~"></a>二、初体验~</h2><h3 id="2-1-生成项目"><a href="#2-1-生成项目" class="headerlink" title="2.1. 生成项目"></a>2.1. 生成项目</h3><p>找到一个合适的位置，创建我们的项目文件夹：</p>
+<ul>
+<li>一般的用户：自己图形界面新建了一个,然后点进去</li>
+<li>命令行用户：<code>mkdir &lt;folder&gt; &amp;&amp; cd &lt;folder&gt;</code></li>
+<li>hexo的用户：<code>hexo init &lt;folder&gt; &amp;&amp; cd &lt;folder&gt;</code></li>
+</ul>
+<h3 id="2-2-安装依赖"><a href="#2-2-安装依赖" class="headerlink" title="2.2. 安装依赖"></a>2.2. 安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i(nstall)</div></pre></td></tr></table></figure>
+<p>npm 就会自动根据 package.json 中的配置自动进行安装</p>
+<h3 id="2-3-运行预览"><a href="#2-3-运行预览" class="headerlink" title="2.3. 运行预览"></a>2.3. 运行预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g(enerate)</div><div class="line">$ hexo s(erver)</div></pre></td></tr></table></figure>
+<p><em>如果这步报错一般是因为没装 hexo-server，运行以下命令安装即可：</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i(nstall) --save  hexo-server</div></pre></td></tr></table></figure>
+<blockquote>
+<p>npm 安装方式中 –save 的意思是作为项目依赖(dependencies)进行安装，可以缩写为 -S (注意大写)<br>此外还有 –save-dev 的意思是作为项目的「开发」依赖(devDependencies)进行安装，可以缩写为 -D (注意大写)<br>这两种安装方式都会将这个包的名称和版本写进 package.json 配置文件中</p>
+</blockquote>
+<p>最后打开浏览器输入<code>http://localhost:4000</code>就可以看到页面啦～</p>
+<h2 id="三、换主题（theme）"><a href="#三、换主题（theme）" class="headerlink" title="三、换主题（theme）"></a>三、换主题（theme）</h2><p>然而只是使用默认的主题（theme）怎么会有逼格→_→，果断要整一个吊炸天的主题呀~，下面以 <a href="https://github.com/yscoder/hexo-theme-indigo">indigo</a> 为例作为说明。</p>
+<h3 id="3-1-下载主题"><a href="#3-1-下载主题" class="headerlink" title="3.1. 下载主题"></a>3.1. 下载主题</h3><p>首先在项目目录下（就是说有个 themes 的文件夹），执行以下命令，将主题下载到 themes 文件夹下的 indigo 文件夹中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/yscoder/hexo-theme-indigo themes/indigo</div></pre></td></tr></table></figure>
+<h3 id="3-2-配置使用主题"><a href="#3-2-配置使用主题" class="headerlink" title="3.2. 配置使用主题"></a>3.2. 配置使用主题</h3><p>接着修改 _config.yml（项目的配置文件，不是主题的） 将 theme 改为 indigo</p>
+<h2 id="四、部署到-github-pages"><a href="#四、部署到-github-pages" class="headerlink" title="四、部署到 github pages"></a>四、部署到 github pages</h2><h3 id="4-1-安装-hexo-deployer-git"><a href="#4-1-安装-hexo-deployer-git" class="headerlink" title="4.1. 安装 hexo-deployer-git"></a>4.1. 安装 hexo-deployer-git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm i(nstall) hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h3 id="4-2-关于-github-pages"><a href="#4-2-关于-github-pages" class="headerlink" title="4.2. 关于 github pages"></a>4.2. 关于 github pages</h3><h4 id="4-2-1-分类"><a href="#4-2-1-分类" class="headerlink" title="4.2.1. 分类"></a>4.2.1. 分类</h4><h5 id="1-项目站点（Project-Pages）"><a href="#1-项目站点（Project-Pages）" class="headerlink" title="1. 项目站点（Project Pages）"></a>1. 项目站点（Project Pages）</h5><p>github 会根据 gh-pages 分支下文件生成静态页面，地址是  [yourName].github.io/[projectName]。（[yourName] 是你的账户名，[projectName] 是你的项目名）</p>
+<h5 id="2-个人或公司站点（User-Organization-Pages）"><a href="#2-个人或公司站点（User-Organization-Pages）" class="headerlink" title="2. 个人或公司站点（User/Organization Pages）"></a>2. 个人或公司站点（User/Organization Pages）</h5><p>首先要创建一个叫做 [yourName].github.io 的项目，接着 github 会根据 master 分支下文件生成静态页面，地址是 [yourName].github.io/。</p>
+<h4 id="4-2-2-一些坑…"><a href="#4-2-2-一些坑…" class="headerlink" title="4.2.2. 一些坑…"></a>4.2.2. 一些坑…</h4><ul>
+<li>有的主题中各种静态文件路径是写死的，比如好多主题中的文件引入是针对第二类页面写死的。</li>
+<li>有些主题中的 CDN 资源被墙，那就需要找到这些文件手动修改地址╮(╯▽╰)╭。</li>
+</ul>
+<h3 id="4-3-修改-config-yml-文件"><a href="#4-3-修改-config-yml-文件" class="headerlink" title="4.3. 修改 _config.yml 文件"></a>4.3. 修改 _config.yml 文件</h3><p><a href="htjtps://github.com/hexojs/hexo-deployer-git">官方文档</a>中是这么介绍的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># You can use this:</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div><div class="line"></div><div class="line"><span class="comment"># or this:</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  message: [message]</div><div class="line">  repo:</div><div class="line">    github: &lt;repository url&gt;,[branch]</div><div class="line">    gitcafe: &lt;repository url&gt;,[branch]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* repo: Repository URL</div><div class="line">* branch: Git branch to deploy the static site to</div><div class="line">* message: Commit message. The default commit message is Site updated: &#123;&#123; now(&apos;YYYY-MM-DD HH:mm:ss&apos;) &#125;&#125;.</div></pre></td></tr></table></figure>
+<blockquote>
+<p>根据 4.2. 所述，部署部分的填写也分为两种情况：</p>
+</blockquote>
+<h4 id="1-个人或公司站点"><a href="#1-个人或公司站点" class="headerlink" title="1. 个人或公司站点"></a>1. 个人或公司站点</h4><ul>
+<li>repo：填写项目地址，例如 <code>git@github.com:BuptStEve/BuptStEve.github.io.git</code></li>
+<li>branch：填写 <code>master</code></li>
+</ul>
+<h4 id="2-项目站点"><a href="#2-项目站点" class="headerlink" title="2. 项目站点"></a>2. 项目站点</h4><ul>
+<li>repo：填写项目地址，例如 <code>git@github.com:BuptStEve.git</code></li>
+<li>branch：填写 <code>gh-pages</code></li>
+<li>url：<a href="https://buptsteve.github.io/" target="_blank" rel="external">https://buptsteve.github.io/</a> （注意最后的 /）</li>
+<li>root：/ （注意最后的 /）</li>
+</ul>
+<h3 id="4-4-开始部署"><a href="#4-4-开始部署" class="headerlink" title="4.4. 开始部署"></a>4.4. 开始部署</h3><p>首先生成站点文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+<p>接着发布</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d(eploy)</div></pre></td></tr></table></figure>
+<p>最后打开对应地址就可以看到自己的博客啦～=￣ω￣=～。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;零、Blog的由来&quot;&gt;&lt;a href=&quot;#零、Blog的由来&quot; class=&quot;headerlink&quot; title=&quot;零、Blog的由来&quot;&gt;&lt;/a&gt;零、Blog的由来&lt;/h2&gt;&lt;p&gt;作为一个学计算机的，一直想整个自己的 Blog，尤其是最近在搞前端。先是看到 &lt;a href=&quot;http://jekyllcn.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jekyll&lt;/a&gt; 感觉不错，折腾了半天感觉还是不够给力。&lt;br&gt;最后还是选择了 &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo3&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="blog" scheme="https://github.com/zhengshui/zhengshui.github.io.git/categories/blog/"/>
+    
+    
+      <category term="hexo" scheme="https://github.com/zhengshui/zhengshui.github.io.git/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
