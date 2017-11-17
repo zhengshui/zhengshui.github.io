@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react重构移动端项目的记录 | Water 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="shuizheng">
+    
+    
+
+    <meta name="description" content="家校健康v2.0.0参考 https://github.com/yeoman/generator-webapp  简介  基于react的技术栈重构dhome-teach 基础语言： ES6 react sass 脚手架： yeoman generator-webapp 构建工具 ： gulp + webpack 统一">
+<meta name="keywords" content="react,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react重构移动端项目的记录 | Water">
+<meta property="og:url" content="https://zhengshui.github.io/2017/11/17/react-reconstruction/index.html">
+<meta property="og:site_name" content="Water">
+<meta property="og:description" content="家校健康v2.0.0参考 https://github.com/yeoman/generator-webapp  简介  基于react的技术栈重构dhome-teach 基础语言： ES6 react sass 脚手架： yeoman generator-webapp 构建工具 ： gulp + webpack 统一数据管理： redux 路由控制器： react-router react-ro">
+<meta property="og:updated_time" content="2017-11-17T08:11:59.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react重构移动端项目的记录 | Water">
+<meta name="twitter:description" content="家校健康v2.0.0参考 https://github.com/yeoman/generator-webapp  简介  基于react的技术栈重构dhome-teach 基础语言： ES6 react sass 脚手架： yeoman generator-webapp 构建工具 ： gulp + webpack 统一数据管理： redux 路由控制器： react-router react-ro">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Water</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/zhengshui" title="shuizheng on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react重构移动端项目的记录</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-11-17" class="post-meta__date date">2017-11-17</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javaScript/">javaScript</a>, <a class="tags-link" href="/tags/react/">react</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="家校健康v2-0-0"><a href="#家校健康v2-0-0" class="headerlink" title="家校健康v2.0.0"></a>家校健康v2.0.0</h3><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<li><a href="https://github.com/yeoman/generator-webapp" target="_blank" rel="noopener">https://github.com/yeoman/generator-webapp</a></li>
+</ol>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<ul>
+<li>基于react的技术栈重构dhome-teach</li>
+<li>基础语言： ES6 react sass</li>
+<li>脚手架： yeoman generator-webapp</li>
+<li>构建工具 ： gulp + webpack</li>
+<li>统一数据管理： redux</li>
+<li>路由控制器： react-router react-router-redux</li>
+<li>性能优化： immutable purerender</li>
+<li>前后端分离： webpack-dev-server(proxy)</li>
+<li>代码规范： eslintrc</li>
+<li>单元测试 ： karma</li>
+<li>开发效率提升 : redux-devtools react-hot-loader</li>
+</ul>
+</blockquote>
+<h4 id="使用的主要库："><a href="#使用的主要库：" class="headerlink" title="使用的主要库："></a>使用的主要库：</h4><ul>
+<li>react                                           //view</li>
+<li>redux                                           //数据管理</li>
+<li>react-router react-router-redux                 //路由</li>
+<li>ReactCSStransitionGroup                          //react官方动画库</li>
+<li>axios                                           //取数据</li>
+<li>redux-thunk                                     //redux异步控制</li>
+<li>react-hot-loader                                 //热替换</li>
+<li>create-react-app                                 //react官方脚手架</li>
+<li>lib-flexible                                   //移动端自适应</li>
+<li>sass                                           //css预处理器</li>
+</ul>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><ol>
+<li>前期准备，代码规范<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i -g gulp</span><br><span class="line">npm i -g gulp-cli</span><br><span class="line">npm i -g webpack</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>使用网易NEC规范 <a href="http://nec.netease.com/standard" target="_blank" rel="noopener">http://nec.netease.com/standard</a></li>
+</ul>
+<ol>
+<li><p>使用脚手架工具快速搭建基础工程</p>
+</li>
+<li><p>开始,开发模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i</span><br><span class="line">gulp webpack:watch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+</li>
+</ol>
+<ol>
+<li>使用redux-devtools工具 <a href="https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md" target="_blank" rel="noopener">https://github.com/gaearon/redux-devtools/blob/master/docs/Walkthrough.md</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev redux-devtools</span><br><span class="line">npm install --save-dev redux-devtools-log-monitor</span><br><span class="line">npm install --save-dev redux-devtools-dock-monitor</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h4><ol>
+<li>使用normalize.css reset样式<br><a href="https://github.com/necolas/normalize.css" target="_blank" rel="noopener">https://github.com/necolas/normalize.css</a></li>
+</ol>
+<h4 id="webpack-配置"><a href="#webpack-配置" class="headerlink" title="webpack 配置"></a>webpack 配置</h4><p>loaders：</p>
+<h3 id="react-学习记录"><a href="#react-学习记录" class="headerlink" title="react 学习记录"></a>react 学习记录</h3><p>1.像设计师一样思考<br>已知“低保真原型和JSON数据结构”；<br>通过对比、重复、亲密性原则进行组件的划分，定义组件并命名；<br>然后划分组件层次（并列、包含）；</p>
+<p>2.构建静态版本<br>利用数据模型渲染一个没有交互的静态版本；<br>可以自上而下或者自下而上的构建静态组件；<br>要求组件只使用render()方法，且只能用props传递数据；</p>
+<p>3.确定最小的可变状态（state）<br>如何确定最小的state？<br>——列出应用所有的数据块；<br>——逐一对以上数据块思考三个问题：<br>①是通过props从父级传递过来么？如果是，则可能不是state。<br>②随时间变化么？如果不变，则可能不是state。<br>//说明可以通过props传递；<br>③能否基于其它state或者props计算出？如果可以，则不是state。</p>
+<p>4.定义getInitialState()所在的组件<br>React 总是在组件层级中单向数据流动的；<br>①找出可以修改或者拥有该state的所有components；<br>②确定一个层级高于①中的所有组件单一组件；<br>③如果找不到该单一组件，则创建该组件；<br>//仅仅为了定义该state；</p>
+<p>父子组件通信互相影响时，props的定义<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        time:this.perid</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">props: [&apos;period&apos;],</span><br><span class="line">watch: &#123;</span><br><span class="line">  period(newVal) &#123;</span><br><span class="line">    if(newVal) &#123;</span><br><span class="line">      this.time = newVal</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

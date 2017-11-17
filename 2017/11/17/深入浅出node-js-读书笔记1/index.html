@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      深入浅出node.js-读书笔记1 | Water 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="shuizheng">
+    
+    
+
+    <meta name="description" content="Node.js模块的实现http://www.infoq.com/cn/articles/nodejs-module-mechanism 原生模块，文件模块 加载文件模块的工作，主要有原生模块module来实现和完成，该原生模块在启动时已经被加载，进程直接调用到runMain静态方法。12345// bootstrap">
+<meta name="keywords" content="node.js,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出node.js-读书笔记1 | Water">
+<meta property="og:url" content="https://zhengshui.github.io/2017/11/17/深入浅出node-js-读书笔记1/index.html">
+<meta property="og:site_name" content="Water">
+<meta property="og:description" content="Node.js模块的实现http://www.infoq.com/cn/articles/nodejs-module-mechanism 原生模块，文件模块 加载文件模块的工作，主要有原生模块module来实现和完成，该原生模块在启动时已经被加载，进程直接调用到runMain静态方法。12345// bootstrap main module.Module.runMain = function (">
+<meta property="og:updated_time" content="2017-11-17T08:10:37.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入浅出node.js-读书笔记1 | Water">
+<meta name="twitter:description" content="Node.js模块的实现http://www.infoq.com/cn/articles/nodejs-module-mechanism 原生模块，文件模块 加载文件模块的工作，主要有原生模块module来实现和完成，该原生模块在启动时已经被加载，进程直接调用到runMain静态方法。12345// bootstrap main module.Module.runMain = function (">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Water</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/zhengshui" title="shuizheng on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">深入浅出node.js-读书笔记1</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-11-17" class="post-meta__date date">2017-11-17</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript/">javascript</a>, <a class="tags-link" href="/tags/node-js/">node.js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="Node-js模块的实现"><a href="#Node-js模块的实现" class="headerlink" title="Node.js模块的实现"></a>Node.js模块的实现</h4><p><a href="http://www.infoq.com/cn/articles/nodejs-module-mechanism" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/nodejs-module-mechanism</a></p>
+<p></p><p>原生模块，文件模块</p><p></p>
+<p></p><p>加载文件模块的工作，主要有原生模块module来实现和完成，该原生模块在启动时已经被加载，进程直接调用到runMain静态方法。</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// bootstrap main module.</span><br><span class="line">Module.runMain = function () &#123;</span><br><span class="line">    // Load the main module--the command line argument.</span><br><span class="line">    Module._load(process.argv[1], null, true);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p></p>
+<p></p><p>_load静态方法在分析文件名之后执行<br>var module = new Module(id, parent);<br>并根据文件路径缓存当前模块对象，该模块实例对象则根据文件名加载。<br>module.load(filename);</p><p></p>
+<ul>
+<li>.js。通过fs模块同步读取js文件并编译执行。</li>
+<li>.node。通过C/C++进行编写的Addon。通过dlopen方法进行加载。</li>
+<li>.json。读取文件，调用JSON.parse解析加载。</li>
+</ul>
+<p>Node.js在编译js文件的过程中实际完成的步骤有对js文件内容进行头尾包装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function (exports, require, module, __filename, __dirname) &#123;</span><br><span class="line">    var circle = require(&apos;./circle.js&apos;);</span><br><span class="line">    console.log(&apos;The area of a circle of radius 4 is &apos; + circle.area(4));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>该段代码通过vm原生模块的runInThisContext方法执行（类似eval，只是具有明确上下文，不污染全局），返回为一个具体的function对象。<br>最后传入module对象的exports，require方法，module，文件名，目录名作为实参并执行。<br>__filename，__dirname，module，exports几个没有定义但是却存在的变量。<br>其中 __filename，__dirname在查找文件路径的过程中分析得到后传入。module变量是这个模块对象自身，exports是在module的构造函数中初始化的一个空对象（{}，而不是null）<br>在这个主文件中，可以通过require方法去引入其余的模块。而其实这个require方法实际调用的就是load方法。<br>load的方法在载入，编译，缓存lmodule后，返回module的exports对象<br>以上所描述的模块载入机制均定义在lib/module.js中</p>
+<ol>
+<li>require方法中文件查找策略</li>
+<li>包结构： NPM的出现则时为了ConmmonJS规范的基础上，实现解决包的安装卸载，依赖管理，版本管理等问题<br>一个符合CommonJS规范的包应该是如下这种结构：<br>一个package.json文件应该存在于包顶级目录下<br>二进制文件应该包含在bin目录下。<br>JavaScript代码应该包含在lib目录下。<br>文档应该在doc目录下。<br>单元测试应该在test目录下。</li>
+<li>Node.js模块与前端模块的异同<br>通常有一些模块可以同时适用于前后端，但是在浏览器端通过script标签的载入Javascipt文件的方法与Node.js不同<br>Node： 包装，形成一个闭包，不会污染全局<br>变量<br>script： 裸露javascript代码片段<br>所以。。。：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(function () &#123;</span><br><span class="line">    // Establish the root object, `window` in the browser, or `global` on the server.</span><br><span class="line">    var root = this;</span><br><span class="line">    var _ = function (obj) &#123;</span><br><span class="line">            return new wrapper(obj);</span><br><span class="line">        &#125;;</span><br><span class="line">    if (typeof exports !== &apos;undefined&apos;) &#123;</span><br><span class="line">        if (typeof module !== &apos;undefined&apos; &amp;&amp; module.exports) &#123;</span><br><span class="line">            exports = module.exports = _;</span><br><span class="line">        &#125;</span><br><span class="line">        exports._ = _;</span><br><span class="line">    &#125; else if (typeof define === &apos;function&apos; &amp;&amp; define.amd) &#123;</span><br><span class="line">        // Register as a named module with AMD.</span><br><span class="line">        define(&apos;underscore&apos;, function () &#123;</span><br><span class="line">            return _;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        root[&apos;_&apos;] = _;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).call(this);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

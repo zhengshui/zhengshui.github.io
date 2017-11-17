@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      移动端开发的坑 | Water 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="shuizheng">
+    
+    
+
+    <meta name="description" content="1.iOS事件委托失效在iOS系统中当事件委托对象为body／document元素时可能会出现事件委托失效的情况； 具体原因为iOS中除了a、button等可点击元素外，其他元素事件不会传递到body／document； 决解方法： 1、将对应元素改为a、button等可点击元素 2、将事件委托到除body／docum">
+<meta name="keywords" content="javaScript,mobile,html5,css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端开发的坑 | Water">
+<meta property="og:url" content="https://zhengshui.github.io/2017/11/17/移动端开发的坑/index.html">
+<meta property="og:site_name" content="Water">
+<meta property="og:description" content="1.iOS事件委托失效在iOS系统中当事件委托对象为body／document元素时可能会出现事件委托失效的情况； 具体原因为iOS中除了a、button等可点击元素外，其他元素事件不会传递到body／document； 决解方法： 1、将对应元素改为a、button等可点击元素 2、将事件委托到除body／document外的父元素中 3、给​目标元素加一条样式规则”cursor: pointe">
+<meta property="og:updated_time" content="2017-11-17T07:46:28.645Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端开发的坑 | Water">
+<meta name="twitter:description" content="1.iOS事件委托失效在iOS系统中当事件委托对象为body／document元素时可能会出现事件委托失效的情况； 具体原因为iOS中除了a、button等可点击元素外，其他元素事件不会传递到body／document； 决解方法： 1、将对应元素改为a、button等可点击元素 2、将事件委托到除body／document外的父元素中 3、给​目标元素加一条样式规则”cursor: pointe">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Water</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/zhengshui" title="shuizheng on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">移动端开发的坑</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-11-17" class="post-meta__date date">2017-11-17</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/css3/">css3</a>, <a class="tags-link" href="/tags/html5/">html5</a>, <a class="tags-link" href="/tags/javaScript/">javaScript</a>, <a class="tags-link" href="/tags/mobile/">mobile</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="1-iOS事件委托失效"><a href="#1-iOS事件委托失效" class="headerlink" title="1.iOS事件委托失效"></a>1.iOS事件委托失效</h3><p>在iOS系统中当事件委托对象为body／document元素时可能会出现事件委托失效的情况；</p>
+<p>具体原因为iOS中除了a、button等可点击元素外，其他元素事件不会传递到body／document；</p>
+<p>决解方法：</p>
+<p>1、将对应元素改为a、button等可点击元素</p>
+<p>2、将事件委托到除body／document外的父元素中</p>
+<p>3、给​目标元素加一条样式规则”cursor: pointer”；</p>
+<hr>
+<h3 id="2-fixed（固定位置定位）的问题"><a href="#2-fixed（固定位置定位）的问题" class="headerlink" title="2.  fixed（固定位置定位）的问题"></a>2.  fixed（固定位置定位）的问题</h3><p><a href="https://github.com/maxzhang/maxzhang.github.com/issues/2" target="_blank" rel="noopener">https://github.com/maxzhang/maxzhang.github.com/issues/2</a></p>
+<p>总结 :</p>
+<ul>
+<li>在 android 手机下 fixed 表现要比 iOS 更好，软键盘弹出时，不会影响fixed元素定位；</li>
+<li>不要在 fixed 元素中使用 input / textarea 元素,而是一个伪input，点击时弹出一个新层。<br>还是保留之前的态度，依然不推荐在 Android下使用 iScroll。在开发项目时，可以考虑分为两个版本：iOS下使用 iScroll的解决方案，Android下使用 position:fixed。</li>
+</ul>
+<h3 id="3-mongodb"><a href="#3-mongodb" class="headerlink" title="3.mongodb"></a>3.mongodb</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: couldn&apos;t connect to server 127.0.0.1:27017, connection attempt failed :</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://stackoverflow.com/questions/12831939/couldnt-connect-to-server-127-0-0-127017，" target="_blank" rel="noopener">https://stackoverflow.com/questions/12831939/couldnt-connect-to-server-127-0-0-127017，</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1) Remove .lock file</span><br><span class="line">sudo rm /var/lib/mongodb/mongod.lock</span><br><span class="line"></span><br><span class="line">2) repair the mongodb</span><br><span class="line">mongod –repair</span><br><span class="line"></span><br><span class="line">3) start the mongodb</span><br><span class="line">sudo service mongodb start</span><br><span class="line"></span><br><span class="line">4) start the mongo client</span><br><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<p>如果出现error：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo: service: command not found</span><br></pre></td></tr></table></figure></p>
+<p>应该是你安装mongodb的方式是采用了homebrew。<br>参考：<a href="https://unix.stackexchange.com/questions/155715/sudo-service-command-not-found-when-installing-mongodb" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/155715/sudo-service-command-not-found-when-installing-mongodb</a></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
