@@ -2,98 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f35b4c85-b467-46c5-85db-67b727736d9f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/12/0.hello-world/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/12/1.react-webapp/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/12/2.mobile-pit/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/12/3.codewars/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/06/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/atom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/categories/blog/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/categories/前端/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/content.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fontawesome/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Bold.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Bold.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Bold.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Light.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Light.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Light.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Medium.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Medium.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Medium.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Medium.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Thin.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Thin.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Thin.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/roboto/Roboto-Thin.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/brand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/img-err.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/img-loading.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/alfred.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/alfred.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/desktop_dir.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/dock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/everything.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/fences.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/launchpad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/mess-desktop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/metro.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/rolan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/spotlight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/terminal.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/win.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/post-1/win10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/autosave.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/click-stream.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/everything-is-stream.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/failure-subtransaction.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/flux-diagram.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/middleware.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/multiple-clicks-stream.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/overview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/redux-loop-architecture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/redux-observable-flow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/redux-saga.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/redux-thunk-architecture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/subtransaction.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/success-subtransaction.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/success-subtransaction.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/using-origin-dispatch.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/岂不美哉.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/redux/桥都麻袋.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/search.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/wave.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Redux/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/codewars/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/fixed，css/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/hexo/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/ios/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/js/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/移动端/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/2017/index.html" afterPath="$PROJECT_DIR$/archives/2017/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/index.html" afterPath="$PROJECT_DIR$/archives/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/JavaScript/index.html" afterPath="$PROJECT_DIR$/tags/JavaScript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/React/index.html" afterPath="$PROJECT_DIR$/tags/React/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -116,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="216">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -142,10 +51,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="87" />
+    <option name="x" value="2022" />
+    <option name="y" value="466" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1035" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -205,24 +114,23 @@
       <option name="presentableId" value="Default" />
       <updated>1510900826530</updated>
       <workItem from="1510900828258" duration="1006000" />
-      <workItem from="1510907399361" duration="82000" />
+      <workItem from="1510907399361" duration="430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1088000" />
+    <option name="totallyTimeSpent" value="1436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="87" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4594017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4594017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -277,8 +185,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="216">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding />
         </state>
       </provider>
