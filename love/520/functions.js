@@ -37,20 +37,3 @@ $(window).resize(function() {
 	};
 })(jQuery);
 
-function timeElapse(){
-	var days = '2'
-	var hours = '2'
-	var minute = '2'
-	var seconds = '2'
-
-	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + format(hours) + "</span> 小时 <span class=\"digit\">"
-		+ format(minute) + "</span> 分钟 <span class=\"digit\">" + format(seconds) + "</span> 秒";
-	$("#clock").html(result);
-}
-
-function format(n) {
-	if(n < 10) {
-		return '0' + n
-	}
-	return n;
-}
