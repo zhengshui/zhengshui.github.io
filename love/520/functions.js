@@ -38,10 +38,10 @@ $(window).resize(function() {
 })(jQuery);
 
 function timeElapse(){
-	var days = 0-moment('2020-09-06').diff(new Date(), 'days')
-	var hours = 0-moment('2020-09-06').diff(new Date(), 'hours') - 24*days;
-	var minute = 0-moment('2020-09-06').diff(new Date(), 'minute') - 24*60*days-hours*60;
-	var seconds = 0-moment('2020-09-06').diff(new Date(), 'seconds')- 24*60*60*days-hours*60*60-minute*60;
+	var days = '2'
+	var hours = '2'
+	var minute = '2'
+	var seconds = '2'
 
 	var result = "第 <span class=\"digit\">" + days + "</span> 天 <span class=\"digit\">" + format(hours) + "</span> 小时 <span class=\"digit\">"
 		+ format(minute) + "</span> 分钟 <span class=\"digit\">" + format(seconds) + "</span> 秒";
